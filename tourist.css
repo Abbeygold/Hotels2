@@ -1,0 +1,327 @@
+{
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+#header_container 
+{ 
+	background:#eee; border:1px solid #666; height:60px; left:0; position:fixed; width:100%; top:0; 
+}
+
+html{
+
+}
+body
+{
+
+   /* color: Highlight;*/
+    font-family: "Times New Roman", Georgia, Serif;
+    font-size: 10pt; /* PhoneFontSizeNormal */
+	text-shadow: #000;
+	/*color: red;*/
+    width: 100%;
+    filter: progid:DXImageTransform.Microsoft.Shadow(color=#000000,direction=45);
+	-ms-content-zooming: none;
+}
+
+.ui-body-c, .ui-overlay-c{background:#000;}
+
+#header 
+{
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+	 height:5%;
+}
+#footer
+{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+
+#content
+{
+	//background:url(hotel1.jpg) no-repeat center top;
+	text-align:justify;
+	text-shadow:none;
+	color: white;
+	padding:1em;
+	/*font-family:arial;*/
+	overflow: hidden;
+	/*color:white;*/
+	/*background: black;*/
+	position:absolute;
+	width:100%;
+	padding:0px 0px 0px 0px;
+
+}
+#content2
+{
+	background:url(reichstag.jpg) no-repeat center top;
+	text-align:justify;
+	text-shadow:none;
+	color: white;
+	text-font:bold;
+	padding:1em;
+	/*font-family:arial;*/
+	overflow: hidden;
+	/*color:white;*/
+	/*background: black;*/
+	position:fixed;
+	width:100%;
+	padding:220px 0px 0px 0px;
+
+}
+#content3
+{
+	background:url(reichstag.jpg) no-repeat center top;
+	text-align:justify;
+	text-shadow:none;
+	color: white;
+	padding:1em;
+	/*font-family:arial;*/
+	overflow: hidden;
+	/*color:white;*/
+	/*background: black;*/
+	position:fixed;
+	width:100%;
+	padding:270px 0px 0px 0px;
+}
+#content4
+{
+	background:url(staticMap.png) no-repeat center top;
+	text-align:justify;
+	text-shadow:none;
+	color: white;
+	padding:1em;
+	/*font-family:arial;*/
+	overflow: hidden;
+	/*color:white;*/
+	/*background: black;*/
+	position:fixed;
+	width:100%;
+	padding:270px 0px 0px 0px;
+}
+#extcontent
+{
+	padding:220px 0px 0px 0px;
+	text-shadow:none;
+	color: white;
+	text-align:justify;
+}
+#extcontent1
+{
+	//padding:260px 0px 0px 0px;
+	text-shadow:none;
+	color: white;
+	text-align:justify;
+	position:relative;
+	//z-index: 500000000;
+}
+#thumb
+{
+	width:650px;
+	margin:auto;
+	padding:230px 0px 0px 0px;
+	padding-left:35%;
+	text-shadow:none;
+	color: white;
+	text-align:justify;
+	position:relative;
+	z-index: 500000000;
+}
+#extcontent3
+{
+	padding:250px 0px 0px 0px;
+	text-shadow:none;
+	color: white;
+	text-align:justify;
+}
+#directions
+{
+	text-shadow:none;
+	color: white;
+	text-align:justify;
+}
+#contentHeading
+{
+	color:rgb(0,0,255);
+}
+
+#motto
+{
+	color:green;
+	padding:1em;
+}
+
+
+/* Portrait layout (default) */
+.pixposition {
+    background:url(reichstag.jpg) no-repeat center top; /* 170px x 200px */
+    position:absolute;             /* position in the center of the screen */
+    left:20%;
+    top:70%;
+    height:70px%;                   /* text area height */
+    width:320px;                   /* text area width */
+    text-align:center;
+    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
+                                   /* offset horizontal: half of text area width */
+}
+.pixposition2 
+{
+    position:absolute;             /* position in the center of the screen */
+  
+    text-align:center;
+    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    margin:-115px 0px 0px -112px; 
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
+        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
+                                      /* offset horizontal: half of image width and text area width */
+    }
+}
+
+
+.event 
+{
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    color:#FFFFFF;
+    font-size:14px;
+    margin:0px 30px;
+    padding:2px 0px;
+	text-align:center;
+}
+
+	.event.listening {
+	width:50px; height:50px; border-radius:150px; background-color:#333; padding: 50px;
+    background-color:#333333;
+    /*display:block;*/	
+}
+
+ 
+.blink 
+{
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+#deviceready
+{
+	padding-left: 20%;
+}
+@keyframes fade 
+{
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+@-webkit-keyframes fade 
+{
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+.thumbnails img 
+{	
+	height: 15px;
+	border: 1px solid #555;
+	padding: 1px;
+	margin: 0 10px 10px 0;
+}
+
+/*.thumbnails img:hover 
+{
+	border: 4px solid #00ccff;
+	cursor:pointer;
+}*/
+.preview
+{
+	//padding:240px 0px 0px 0px;
+}
+.preview img 
+{
+	padding: 0px;
+	height: 251px;
+}
+
+.navigation-bar .ui-btn .ui-btn-inner 
+{ 
+	padding-top: 40px !important;
+}
+
+.navigation-bar .ui-btn .ui-icon
+ { 
+	width: 30px!important; 
+	height: 30px!important; 
+	margin-left: -15px !important; 
+	box-shadow: none!important; 
+	-moz-box-shadow: none!important; 
+	-webkit-box-shadow: none!important; 
+	-webkit-border-radius: 0 !important; 
+	border-radius: 0 !important; 
+}
+
+#nav_findus .ui-icon 
+{ 
+	background-size: 24px 24px; 
+}
+
+#nav_findus .ui-icon 
+{ 
+	background:  url(img/38-airplane.png) 50% 50% no-repeat; 
+}
+
+h4
+{
+	font-size: 10px;
+	color:red;
+}
+
+a:link
+{
+	text-decoration: none;
+}
+
+#main_wrapper
+{
+	width: 100%;
+	overflow:hidden;
+	font-size:8px;
+	text-color: white;
+}
+#phone
+{	
+	margin-left: 30px;
+	width: 30%;
+	float:left;
+	padding-bottom:0px;
+}
+
+#addContact
+{
+	width: 30%;
+	float:left;
+}
+
+#take_me_there
+{	
+	width: 30%;
+	float:left;
+}
+#addContact .plus {
+	font-size: 15px;
+	color:red;
+	font: bold;
+}
+#take_me_there .navigate {
+	font-size: 15px;
+	color:blue;
+	font: bold;
+}

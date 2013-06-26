@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TouristApp</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no height = device-height, target-densitydpi=device-dpi">
+      <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
+      <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+      <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+      <script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+      <link rel="stylesheet" href="tourist.css" />
+     <script src="tourist.js"></script>
+    </meta>
+  </head>
+  <body>
+    <div data-role="page" id="home">
+      <div data-role="header" data-position="fixed" id =" hotel_name">
+        <div id ="hotel">
+          Hotel Name
+        </div>
+        </div>
+      <br/>
+      <div id="content">
+        <div id="motel" class="preview" align="center">
+          <img id="preview" src="hotel1.jpg" alt="problem loading image"></img>
+        </div>
+      </div>
+      <div id="thumb" class="thumbnails">
+        <img onclick="preview.src=img1.src" id="img1" src="hotel1.jpg" alt="Image Not Loaded"/>
+        <img onclick="preview.src=img2.src" id="img2" src="amali2.jpg" alt="Image Not Loaded"/>
+        <img onclick="preview.src=img3.src" id="img3" src="amali.jpg" alt="Image Not Loaded"/>
+      </div>
+      <div id="extcontent1">
+        <div id="main_wrapper">
+        <div id ="phone">
+          <a href="tel:+49302270">
+            <img src="phoneicon.png"></img>
+          </a>
+          <br>call</br>
+        </div>
+        <div id="addContact">
+          <a class="plus" onClick="addContact();">
+            +</a>
+            <br>Add</br>
+        </div>
+        <div id="take_me_there">
+          <a href="tel:+49302270" class="navigate">
+            >>
+            </a>
+            <br>Start Navigation</br>
+        </div>
+        </div>
+        <h2>
+         Hotel Information
+        </h2>
+        <h3 id="contentHeading" >Postal Address</h3>
+        <class id="address">Adress goes here</class>
+        <h3 id="contentHeading" >Star Rating</h3>
+        <class id="stars"> 5 stars </class>
+        <h3 id="contentHeading" >Description</h3>
+        <class id="description"> describe </class>
+        <h3 id="contentHeading" >Rooms</h3>
+        <class id="rooms"> rooms </class>
+        <h3 id="contentHeading" >Website</h3>
+        www.hotel_bugalow.de
+      </div>
+    </div>
+     <!-- 2nd page" -->
+    <div data-role="page" id="about">
+    </div>
+    <script>
+      var htl_data = {"Hotels":[{"Category":"Hotel","Name":"Amalienhof","Rating":3,"Description":"The family-run Hotel Amalienhof is located in the heart of Weimar, next to the famous \"Goethehaus\".\r\nBehind its neoclassical fa\u00e7ade, you will find 23 stylishly furnished rooms with valuable antique furniture from the time of Goethe, as well as 9 apartments and holiday homes.\r\nBuilt in 1826 by the architect Coudray, the building was completely renovated in 1996.\r\nYou may park free of charge in the hotel's secure car park. From our roof terrace you can enjoy a view over the city.","Location":"Town centre, 3Km from train station","Rooms":"32 (13 single\/ 19 double)","Pricing":"Single: 55 \u2013 85 \u20ac incl. breakfast, Double: 75 \u2013 105 \u20ac incl. breakfast","Street":"Amalienstr\u00dfe 2","ZIP Code":"99423","Town":"Weimar","Telephone":"+4936435490","E-mail":"info@amalienhof-weimar.de","Pictures":["http:\/\/acarte-hotel.de\/up\/bilder\/88.jpg","http:\/\/acarte-hotel.de\/up\/bilder\/93.jpg","http:\/\/acarte-hotel.de\/up\/bilder\/125.jpg","http:\/\/acarte-hotel.de\/up\/bilder\/133.jpg","http:\/\/acarte-hotel.de\/up\/bilder\/142.jpg","http:\/\/acarte-hotel.de\/up\/bilder\/144.jpg","http:\/\/acarte-hotel.de\/up\/bilder\/146.jpg","http:\/\/acarte-hotel.de\/up\/bilder\/159.jpg","http:\/\/acarte-hotel.de\/up\/bilder\/214.jpg"],"Coordinates":"50.99398,11.315738"},{"Category":"Hotel","Name":"Alt Weimar","Rating":3,"Description":"The Alt Weimar hotel and restaurant was founded in 1909 and surprises with a mix of historique ambiance in the restaurant and Bauhaus style hotel rooms.","Location":"City centre, 3 km from train station","Rooms":"17 (13 single\/ 19 double)","Pricing":"Single: from 60 \u20ac incl. breakfast, Double: from 90 \u20ac incl. breakfast","Street":"Prellerstra\u00dfe 2","ZIP Code":"99423","Town":"Weimar","Telephone":"+49364386190","E-mail":"info@alt-weimar.de","Pictures":["http:\/\/www.weimar.de\/uploads\/tx_enzhotellist\/images\/altweimar_gastraum_size1000_01.jpg","http:\/\/www.weimar.de\/uploads\/tx_enzhotellist\/images\/altweimar_zimmer_size1000.jpg"],"Coordinates":"50.977625,11.322899"},{"Category":"Hotel","Name":"Am Frauenplan","Rating":3,"Description":"The baroque \u201cv. Bernstorff\u00b4sche Palais\u201d opened in may 2003 to provide modern hotel facilities in superior middle class.You find us in the middest of the classical centre of Weimar between Goethes and Schillers living house. Individual guests and parties of tourists can order breakfast, lunch and dinner ( in the main hotel)","Location":"City centre, 1.5 km from train station","Rooms":"48","Pricing":"Single: 49 - 69 \u20ac incl. breakfast, Double: 70 - 88 \u20ac incl. breakfast","Street":"Brauhausgasse 10","ZIP Code":"99423","Town":"Weimar","Telephone":"+49364349440","E-mail":"info@hotel-am-frauenplan.de","Pictures":["http:\/\/hotel-am-frauenplan.de\/images\/foto1.jpg","http:\/\/hotel-am-frauenplan.de\/images\/foto2.jpg","http:\/\/hotel-am-frauenplan.de\/images\/foto3.jpg","http:\/\/hotel-am-frauenplan.de\/images\/zimmer1.jpg","http:\/\/hotel-am-frauenplan.de\/images\/zimmer2.jpg","http:\/\/hotel-am-frauenplan.de\/images\/zimmer3.jpg","http:\/\/hotel-am-frauenplan.de\/images\/zimmer4.jpg"],"Coordinates":"50.978242,11.328033"},{"Category":"Hotel","Name":"Anna Amalia","Rating":3,"Description":"Welcome Home. Our family directed Hotel is located in the middle of the historical \u201cold town\u201d section of Weimar. This is the best possible starting point for your activities in this culturally famous city. A Mediterranean ambience and the harmonious composition of furnishings and colours leave no wishes open.  The 53 available rooms, as well as our holiday apartment, are naturally maintained In the Mediterranean style.  We have varied available housing arrangements, starting with the classic single and double rooms, also available with French style beds, junior suites and apartments, as well as a gigantic holiday apartment overlooking the roofs of Weimar.","Location":"City centre, 1.5 km from train station","Rooms":"53","Pricing":"Single: 62 \u2013 77 \u20ac incl. breakfast, Double: 87 - 97 \u20ac incl. breakfast","Street":"Geleitstra\u00dfe 8-12","ZIP Code":"99423","Town":"Weimar","Telephone":"+49364349560","E-mail":"info@hotel-anna-amalia.de","Pictures":["http:\/\/www.hotel-anna-amalia.de\/fileadmin\/Bilder_fuer_Websiteninhalte\/Startseite\/hotel-weimar-th.jpg","http:\/\/www.hotel-anna-amalia.de\/fileadmin\/Bilder_fuer_Websiteninhalte\/Startseite\/hotel-weimar-th.jpg","http:\/\/www.hotel-anna-amalia.de\/fileadmin\/template\/images\/doppelzimmer\/doppelzimmer.jpg","http:\/\/www.hotel-anna-amalia.de\/fileadmin\/template\/images\/einzelzimmer\/zimmer.jpg","http:\/\/www.hotel-anna-amalia.de\/fileadmin\/template\/images\/suite\/suite.jpg","http:\/\/www.hotel-anna-amalia.de\/fileadmin\/template\/images\/suite\/wohnbereich_v2.jpg","http:\/\/www.hotel-anna-amalia.de\/fileadmin\/template\/images\/suite\/schlafzimmerss_klein.jpg","http:\/\/www.hotel-anna-amalia.de\/fileadmin\/template\/images\/penthouse\/bad.jpg"],"Coordinates":"50.980861,11.326515"},{"Category":"Hotel","Name":"Grand Hotel Russischer Hof","Rating":4,"Description":"The Best Western premier Grand Hotel Russischer Hof has developed in its two hundred years history to an institution in Weimar and is since then constantly associated with the cultural development of the town. Our house, in the best location, is the exclusive address for the exquisite Weimar visitors, who appreciate the tradition, courteous service, and well-tended ambience. Affectionately restored, equipped with precious interior and contemporary technology, is our house the ideal place to stay for a thrilling residence in the town of Goethe, Schiller, Hebbel, Liszt, the Bauhauses... the list can continue without an end.","Location":"City centre, 2 km from train station","Rooms":"7 Single\/ 119 Double","Pricing":"Single: 100 - 150 \u20ac, Double: 110 - 160 \u20ac","Street":"Goetheplatz 2","ZIP Code":"99423","Town":"Weimar","Telephone":"+4936437740","E-mail":"reservierung@russischerhof.bestwestern.de","Pictures":["http:\/\/www.weimar.de\/typo3temp\/pics\/19173edf7f.jpg","http:\/\/www.weimar.de\/uploads\/tx_enzhotellist\/images\/Weimar_Grand_Hotel_Russischer_Hof_Lobby_Gold_size1000.jpg","http:\/\/www.weimar.de\/uploads\/tx_enzhotellist\/images\/Grand_Hotel_Russischer_Hof_Weimar_Ausenansicht_size1000.jpg"],"Coordinates":"50.981275,11.324801"},{"Category":"Hotel","Name":"Comfort Hotel Weimar","Rating":3,"Description":"Our Comfort Hotel Weimar is located in the northern part of Weimar. The 90 beautifully furnished guest rooms feature balconies, bathrooms with shower, queen-size bed, arm chair, Satellite TV, direct dial telephone. Wake up to enjoy an extensive buffet breakfast in a comfortable, friendly atmosphere.","Location":"Weimar-Sch\u00f6ndorf, 2.5 km from train station","Rooms":"91 (39 Single\/ 45 Double\/ 7 Triple)","Pricing":"Single: 55 \u2013 60 \u20ac incl. breakfast, Double: 75 \u2013 80 \u20ac incl. breakfast","Street":"Ernst-Busse-Stra\u00dfe 4","ZIP Code":"99427","Town":"Weimar","Telephone":"+4936434550","E-mail":"info@comfort-weimar.de","Pictures":["http:\/\/www.weimar-hotel-comfort.de\/images\/middle\/hotel-rooms01.jpg","http:\/\/www.weimar-hotel-comfort.de\/images\/middle\/hotel-location.jpg","http:\/\/www.weimar-hotel-comfort.de\/images\/middle\/hotel-offers.jpg","http:\/\/www.weimar-hotel-comfort.de\/images\/angebote\/zeitreise.jpg"],"Coordinates":"51.010872,11.331667"},{"Category":"Hotel","Name":"Das Kleine Hotel","Rating":3,"Description":"Family run hotel (breakfast only) in a quiet residential area.","Location":"Southwestfourth, 2 km from train station","Rooms":"14 (2 Single\/ 12 Double)","Pricing":"Single: 58 \u2013 75 \u20ac incl. breakfast, Double: 79 - 92 \u20ac incl. breakfast","Street":"Jahnstra\u00dfe 18","ZIP Code":"99423","Town":"Weimar","Telephone":"+49364383530","E-mail":"info@das-kleine-hotel.de","Pictures":["http:\/\/das-kleine-hotel.de\/images\/haus_1.gif","http:\/\/das-kleine-hotel.de\/images\/zimmer_2.gif","http:\/\/das-kleine-hotel.de\/images\/zimmer_1.gif","http:\/\/das-kleine-hotel.de\/images\/haus_2.gif","http:\/\/das-kleine-hotel.de\/images\/terrasse.jpg"],"Coordinates":"50.978461,11.31489"}],"Restaurants":[]};
+      var hotel = htl_data.Hotels[0];
+      // alert(hotel.Category);
+      $('#hotel').html(htl_data.Hotels[0].Name + " Hotel");
+      $('#stars').html(htl_data.Hotels[0].Rating);
+      $('#description').html(htl_data.Hotels[0].Description);
+      $('#rooms').html(htl_data.Hotels[0].Rooms);
+      $('#htl_Pricing').html(htl_data.Hotels[0].Pricing);
+      $('#address').html(htl_data.Hotels[0].Street + " Weimar");
+    </script>
+    <script type="text/javascript">
+      var deviceReady = false;
+      function addContact(){
+      console.log("addContact()");
+      try{
+      console.log("before create");
+      // create seems to be failing...
+      var contact = navigator.contacts.create({"displayName": "Dooney Evans"});
+
+      console.log("contact created");
+
+      var contactName = {
+      formatted: "Hotel Bugalow",
+      familyName: "Bugalow",
+      givenName: "Hotel",
+      middleName: ""
+      };
+
+      console.log("create contactName");
+
+      contact.name = contactName;
+
+      contact.phoneNumbers = [new ContactField('work', '512-555-1234', true)];
+
+      console.log("create contact phone number");
+
+      contact.save(
+      function(id) { console.log("Contact saved." + id);},
+      function(e) { console.log("Contact save failed: " + e.code); }
+      );
+
+      console.log("saving the contact");
+      }
+      catch (e)
+      {
+      //alert(e);
+      console.log("failed to save contact");
+      }
+
+      };
+
+      /**
+      * Function called when page has finished loading.
+      */
+      function init() {
+      document.addEventListener("deviceready", function() {
+      deviceReady = true;
+      console.log("Device="+device.platform+" "+device.version);
+      }, false);
+      window.setTimeout(function() {
+      if (!deviceReady) {
+      alert("Error: Cordova did not initialize.  Demo will not run correctly.");
+      }
+      },1000);
+      }
+    </script>
+  </body>
+</html>
